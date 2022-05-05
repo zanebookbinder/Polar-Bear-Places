@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# PPL-Final-Project-2022
+>>>>>>> 60040bcc016d607d4f4432ecb92e78a1b6312b21
