@@ -1,0 +1,11 @@
+Main Database Format:
+
+StudentID: int
+Name: string
+Email: string
+Year: int
+Building: string
+Room: string? int? (I think string because of tower + bruns)
+
+rails generate scaffold Student StudentID:int Name:string Email:string Year:int Building:string Room: string
+bundle exec rake db:migrate
