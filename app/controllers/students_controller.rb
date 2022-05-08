@@ -6,6 +6,10 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def trying
+    @students = Student.all
+  end
+
   # GET /students/1 or /students/1.json
   def show
   end
