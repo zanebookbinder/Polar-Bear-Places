@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "PPL-Final-Project-2022#index"
+  get "PPL-Final-Project-2022" => "PPL-Final-Project-2022#index"
+  get "/" => "PPL-Final-Project-2022#index"
+  post "/" => "PPL-Final-Project-2022#enterRoom"
 end
