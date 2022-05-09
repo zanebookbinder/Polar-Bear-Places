@@ -36,6 +36,7 @@ class StudentsController < ApplicationController
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
+  end
 
   def createHouse
     @house = house.new(house_params)
@@ -84,5 +85,4 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:StudentID, :Name, :Email, :Year, :Building, :Room)
     end
-  end
 end
