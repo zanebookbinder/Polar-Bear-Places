@@ -1,23 +1,34 @@
-<h1>Students in your house:</h1>
-
-<%= form_tag do%>
-  <p>Your house: <%= text_field_tag(:houseInput)%></p>
-  <p><%= submit_tag "Enter Housing"%></p>
+<h1>Polar Bear Places:</h1>
+<% if MyDatum.all.length() == 0%>
+	<%= form_tag do%>
+		<p>Your student ID: <%= text_field_tag(:idInput)%></p>
+		<p>Your name: <%= text_field_tag(:nameInput)%></p>
+		<p>Your email: <%= text_field_tag(:emailInput)%></p>
+		<p>Your year: <%= text_field_tag(:yearInput)%></p>
+		<p>Your house: <%= text_field_tag(:houseInput)%></p>
+		<p>Your room: <%= text_field_tag(:roomInput)%></p>
+	<p><%= submit_tag "Enter info"%></p>
+	<% end %>
 <% end %>
 
 <br>
 
-<div id="students">
-  <% @students.each do |student| %>
-	<% if Housing.all.length() > 0%>
-		<% if student.Building == Housing.all.sort_by {|housing| [-housing.id, housing.House]} [0].House %>
-		<%= render student %>
-		<p>
-			<%= link_to "Show this student", student %>
-		</p>
-		<% end %>
-	<% end %>
-  <% end %>
-</div>
+<% if MyDatum.all.length() != 0%>
+	<h2>Your info:</h2>
+	<%= render MyDatum.all[0]%>
+	<p>
+		<%= link_to "Edit your info", MyDatum.all[0] %>
+	</p>
 
-<%= link_to "Click here to add your info", new_student_path %>
+	<h2>Other students in your house:</h2>
+	<div id="students">
+	<% @students.each do |student| %>
+			<% if student.Building == MyDatum.all.sort_by {|myData| [-myData.id, myData.Building]} [0].Building %>
+			<%= render student %>
+			<p>
+				<%= link_to "Show this student", student %>
+			</p>
+			<% end %>
+	<% end %>
+	</div>
+<% end %>

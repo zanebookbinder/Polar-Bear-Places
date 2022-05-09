@@ -9,3 +9,6 @@ Room: string? int? (I think string because of tower + bruns)
 
 rails generate scaffold Student StudentID:int Name:string Email:string Year:int Building:string Room:string
 bundle exec rake db:migrate
+
+rails generate scaffold Housing StudentID:integer Name:string Email:string Year:integer Building:string Room:string
+bundle exec rake db:migrate

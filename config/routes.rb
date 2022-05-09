@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :my_data
   root "polar_bear_places#index"
   get "/students" => "students#trying"
   get 'polar_bear_places/index'

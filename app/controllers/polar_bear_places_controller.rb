@@ -5,9 +5,15 @@ class PolarBearPlacesController < ApplicationController
 
   def handlePost
     puts "-------IN HANDLE POST-------"
+
+    id = params[:idInput]
+    name = params[:nameInput]
+    email = params[:emailInput]
+    year = params[:yearInput]
     house = params[:houseInput]
-    map = {"House" => house}
-    newRow = Housing.new(map)
+    room = params[:roomInput]
+    map = {"StudentID" => id,"Name" => name, "Email" => email, "Year" => year, "Building" => house, "Room" => room}
+    newRow = MyDatum.new(map)
     respond_to do |format|
       if newRow.save
         puts "Success!"
@@ -22,7 +28,7 @@ class PolarBearPlacesController < ApplicationController
     
 
   def new
-    @house = Housing.new
+    @myInfo = MyDatum.new
   end
     
 end
