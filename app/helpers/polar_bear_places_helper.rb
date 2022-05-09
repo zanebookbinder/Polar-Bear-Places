@@ -1,0 +1,2 @@
+module PolarBearPlacesHelper
+end

@@ -1,0 +1,12 @@
+<%= form_with(model: house) do |form| %>
+
+
+  <div>
+    <%= form.label :Housing, style: "display: block" %>
+    <%= form.text_field :Housing %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Students in your house:</h1>
+
+<%= form_tag do%>
+  <p>Your house: <%= text_field_tag(:houseInput)%></p>
+  <p><%= submit_tag "Enter Housing"%></p>
+<% end %>
+
+<br>
+
+<div id="students">
+  <% @students.each do |student| %>
+	<% if Housing.all.length() > 0%>
+		<% if student.Building == Housing.all.sort_by {|housing| [-housing.id, housing.House]} [0].House %>
+		<%= render student %>
+		<p>
+			<%= link_to "Show this student", student %>
+		</p>
+		<% end %>
+	<% end %>
+  <% end %>
+</div>
+
+<%= link_to "Click here to add your info", new_student_path %>
