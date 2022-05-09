@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "students#index"
+  root "polar_bear_places#index"
   get "/students" => "students#trying"
   get 'polar_bear_places/index'
   resources :students
