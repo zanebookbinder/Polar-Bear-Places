@@ -1,7 +1,16 @@
 <h1>Students in your house:</h1>
 
+<%= form_tag do%>
+  <p>Your house: <%= text_field_tag(:houseInput)%></p>
+  <p><%= submit_tag "Enter Housing"%></p>
+<% end %>
+
+<br>
+
+
 <div id="students">
   <% @students.each do |student| %>
+
     <% if student.Building == "Quinby House" %>
       <%= render student %>
       <p>

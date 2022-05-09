@@ -36,6 +36,19 @@ class StudentsController < ApplicationController
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
+
+  def createHouse
+    @house = house.new(house_params)
+
+    respond_to do |format|
+      if @house.save
+        format.html { redirect_to root_url, notice: "House was successfully created." }
+        format.json { render :show, status: :created, location: @house }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @house.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /students/1 or /students/1.json
@@ -71,4 +84,5 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:StudentID, :Name, :Email, :Year, :Building, :Room)
     end
+  end
 end
