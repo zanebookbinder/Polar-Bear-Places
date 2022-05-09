@@ -12,3 +12,6 @@ bundle exec rake db:migrate
 
 rails generate scaffold Housing StudentID:integer Name:string Email:string Year:integer Building:string Room:string
 bundle exec rake db:migrate
+
+rails generate scaffold myData StudentID:integer Name:string Email:string Year:integer Building:string Room:string
+bundle exec rake db:migrate
