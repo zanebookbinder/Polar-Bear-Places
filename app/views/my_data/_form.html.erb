@@ -1,0 +1,47 @@
+<%= form_with(model: my_datum) do |form| %>
+  <% if my_datum.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(my_datum.errors.count, "error") %> prohibited this my_datum from being saved:</h2>
+
+      <ul>
+        <% my_datum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :StudentID, style: "display: block" %>
+    <%= form.number_field :StudentID %>
+  </div>
+
+  <div>
+    <%= form.label :Name, style: "display: block" %>
+    <%= form.text_field :Name %>
+  </div>
+
+  <div>
+    <%= form.label :Email, style: "display: block" %>
+    <%= form.text_field :Email %>
+  </div>
+
+  <div>
+    <%= form.label :Year, style: "display: block" %>
+    <%= form.number_field :Year %>
+  </div>
+
+  <div>
+    <%= form.label :Building, style: "display: block" %>
+    <%= form.text_field :Building %>
+  </div>
+
+  <div>
+    <%= form.label :Room, style: "display: block" %>
+    <%= form.text_field :Room %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

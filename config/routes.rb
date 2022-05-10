@@ -10,4 +10,16 @@ Rails.application.routes.draw do
   get "/" => "students#index"
   post "/" => "polar_bear_places#handlePost"
   post "/students/new" => "polar_bear_places#enterStudent"
+  
+  
+  get "/ladd" => "polar_bear_places#ladd"
+  get "/quinby" => "polar_bear_places#quinby"
+  get "/baxter" => "polar_bear_places#baxter"
+  get "/howell" => "polar_bear_places#howell"
+  get "/boodyjohnson" => "polar_bear_places#boodyjohnson"
+  get "/helmreich" => "polar_bear_places#helmreich"
+  get "/reed" => "polar_bear_places#reed"
+  get "/macmillan" => "polar_bear_places#macmillan"
+  get "/burnett" => "polar_bear_places#burnett"
+
 end

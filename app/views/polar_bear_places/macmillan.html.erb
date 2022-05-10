@@ -1,0 +1,14 @@
+<h1>Macmillan Residents</h1>
+
+<div id="students">
+	<% @students.each do |student| %>
+			<% if student.Building == "Macmillan" %>
+			<%= render student %>
+			<p>
+				<%= link_to "Show this student", student %>
+			</p>
+			<% end %>
+	<% end %>
+</div>
+
+<%= link_to "Return home", root_path %>

@@ -30,5 +30,41 @@ class PolarBearPlacesController < ApplicationController
   def new
     @myInfo = MyDatum.new
   end
-    
+
+  def ladd
+    @students = Student.all
+  end
+
+  def quinby
+    @students = Student.all
+  end
+
+  def baxter
+    @students = Student.all
+  end
+
+  def reed
+    @students = Student.all
+  end
+
+  def howell
+    @students = Student.all
+  end
+
+  def macmillan
+    @students = Student.all
+  end
+
+  def boodyjohnson
+    @students = Student.all
+  end
+
+  def burnett
+    @students = Student.all
+  end
+
+  def helmreich
+    @students = Student.all
+  end
+
 end
