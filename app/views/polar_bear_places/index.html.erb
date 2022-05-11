@@ -1,5 +1,6 @@
 <h1>Polar Bear Places</h1>
 
+<h4>Click on a college house to see who is living there:</h4>
 <%= link_to "Ladd", ladd_path %>
 <%= link_to "Quinby", quinby_path %>
 <%= link_to "Baxter", baxter_path %>
@@ -22,6 +23,8 @@
 		<p>Your room: <%= text_field_tag(:roomInput)%></p>
 	<p><%= submit_tag "Enter info"%></p>
 	<% end %>
+
+<%= link_to "Add another student to the database", new_student_path %>
 <% end %>
 
 <% if MyDatum.all.length() != 0%>
