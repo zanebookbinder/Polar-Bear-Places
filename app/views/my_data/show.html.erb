@@ -1,10 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @my_datum %>
+<h2>Your info</h2>
+
+<table class="center" cellpadding="6" cellspacing="-5" style="border:1px solid black";margin-left:auto;margin-right:auto;>
+		<thead>
+			<tr>
+				<th>Student ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Year</th>
+				<th>House</th>
+				<th>Room Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="text-align: center; vertical-align: middle;"><%= @my_datum.StudentID%></td>
+				<td style="text-align: center; vertical-align: middle;"><%= @my_datum.Name%></td>
+				<td style="text-align: center; vertical-align: middle;"><%=@my_datum.Email%></td>
+				<td style="text-align: center; vertical-align: middle;"><%=@my_datum.Year%></td>
+				<td style="text-align: center; vertical-align: middle;"><%=@my_datum.Building%></td>
+				<td style="text-align: center; vertical-align: middle;"><%=@my_datum.Room%></td>
+			</tr>
+		</tbody>
+	</table>
+
+<br>
 
 <div>
-  <%= link_to "Edit this my datum", edit_my_datum_path(@my_datum) %> |
-  <%= link_to "Back to my data", root_path %>
-
-  <%= button_to "Destroy this my datum", @my_datum, method: :delete %>
+  <%= link_to "Edit your data", edit_my_datum_path(@my_datum) %> |
+  <%= link_to "Back to the home page", root_path %>
 </div>
+
+<%= button_to "Delete your data", @my_datum, method: :delete %>

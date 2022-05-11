@@ -1,10 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @student %>
+<h2>Student info</h2>
+
+<table class="center" cellpadding="6" cellspacing="-5" style="border:1px solid black";margin-left:auto;margin-right:auto;>
+  <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Year</th>
+      <th>House</th>
+      <th>Room Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center; vertical-align: middle;"><%= @student.StudentID%></td>
+      <td style="text-align: center; vertical-align: middle;"><%= @student.Name%></td>
+      <td style="text-align: center; vertical-align: middle;"><%=@student.Email%></td>
+      <td style="text-align: center; vertical-align: middle;"><%=@student.Year%></td>
+      <td style="text-align: center; vertical-align: middle;"><%=@student.Building%></td>
+      <td style="text-align: center; vertical-align: middle;"><%=@student.Room%></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
 
 <div>
   <%= link_to "Edit this student", edit_student_path(@student) %> |
-  <%= link_to "Back to students", root_path %>
-
-  <%= button_to "Destroy this student", @student, method: :delete %>
+  <%= link_to "Back to the home page", root_path %>
 </div>

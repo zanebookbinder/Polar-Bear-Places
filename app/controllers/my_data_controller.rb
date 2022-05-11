@@ -52,7 +52,7 @@ class MyDataController < ApplicationController
     @my_datum.destroy
 
     respond_to do |format|
-      format.html { redirect_to my_data_url, notice: "My datum was successfully destroyed." }
+      format.html { redirect_to root_url, notice: "My datum was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -1,15 +1,37 @@
 <h1>Macmillan Residents</h1>
 <%= image_tag("macmillan.jpg", :size => "260x180", :crop => :fill)%>
 
+
 <div id="students">
-	<% @students.each do |student| %>
+	<table class="center" cellpadding="6" cellspacing="-5" style="border:1px solid black";margin-left:auto;margin-right:auto;>
+		<thead>
+			<tr>
+				<th>Student ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Year</th>
+				<th>House</th>
+				<th>Room Number</th>
+				<th>Link</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @students.each do |student| %>
 			<% if student.Building == "Macmillan" %>
-			<%= render student %>
-			<p>
-				<%= link_to "Show this student", student %>
-			</p>
+				<tr>
+					<td style="text-align: center; vertical-align: middle;"><%= student.StudentID%></td>
+					<td style="text-align: center; vertical-align: middle;"><%=student.Name%></td>
+					<td style="text-align: center; vertical-align: middle;"><%=student.Email%></td>
+					<td style="text-align: center; vertical-align: middle;"><%=student.Year%></td>
+					<td style="text-align: center; vertical-align: middle;"><%=student.Building%></td>
+					<td style="text-align: center; vertical-align: middle;"><%=student.Room%></td>
+					<td style="text-align: center; vertical-align: middle;"><%= link_to "Show this student", student %></td>
+				</tr>
 			<% end %>
-	<% end %>
+		<% end %>
+	</table>
 </div>
+
+<br >
 
 <%= link_to "Return home", root_path %>

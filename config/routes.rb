@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # get "PPL-Final-Project-2022" => "PPL-Final-Project-2022#index"
   get "/" => "students#index"
   post "/" => "polar_bear_places#handlePost"
-  post "/students/new" => "polar_bear_places#enterStudent"
+  post "/students/new" => "polar_bear_places#handlePost"
   
   
   get "/ladd" => "polar_bear_places#ladd"
