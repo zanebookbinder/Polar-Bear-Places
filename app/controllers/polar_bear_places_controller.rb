@@ -15,7 +15,6 @@ class PolarBearPlacesController < ApplicationController
     avatar = params[:avatar]
     map = {"StudentID" => id,"Name" => name, "Email" => email, "Year" => year, "Building" => house, "Room" => room}
     newRow = MyDatum.new(map)
-    newRow.avatar.attach(params[:avatar])
     respond_to do |format|
       if newRow.save
         puts "Success!"

@@ -22,6 +22,7 @@ class MyDataController < ApplicationController
   # POST /my_data or /my_data.json
   def create
     @my_datum = MyDatum.new(my_datum_params)
+    @my_datum.avatar.attach(my_datum_params[:avatar])
 
     respond_to do |format|
       if @my_datum.save
@@ -65,6 +66,6 @@ class MyDataController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def my_datum_params
-      params.require(:my_datum).permit(:StudentID, :Name, :Email, :Year, :Building, :Room)
+      params.require(:my_datum).permit(:StudentID, :Name, :Email, :Year, :Building, :Room, :avatar)
     end
 end
