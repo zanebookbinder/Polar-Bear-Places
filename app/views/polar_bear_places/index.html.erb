@@ -14,16 +14,8 @@
 
 <% if MyDatum.all.length() == 0%>
 	<h2>Enter your information to find out who you're living with!</h2>
-	<%= form_tag do%>
-		<p>Your student ID: <%= text_field_tag(:idInput)%></p>
-		<p>Your name: <%= text_field_tag(:nameInput)%></p>
-		<p>Your email: <%= text_field_tag(:emailInput)%></p>
-		<p>Your year: <%= text_field_tag(:yearInput)%></p>
-		<p>Your house: <%= text_field_tag(:houseInput)%></p>
-		<p>Your room: <%= text_field_tag(:roomInput)%></p>
-		<p>Your profile picture: <%= file_field_tag(:avatar)%>
-	<p><%= submit_tag "Enter info"%></p>
-	<% end %>
+
+	<%= render "my_data/form", my_datum: MyDatum.new%>
 
 <%= link_to "Add another student to the database", new_student_path %>
 <% end %>
@@ -56,7 +48,7 @@
 	</table>
 
 	<% if MyDatum.all[0].avatar.attached?%>
-		<%= image_tag MyDatum.all[0].avatar%>
+		<%= image_tag MyDatum.all[0].avatar, :size => "260x180"%>
 	<%end%>
 
 	<p>
@@ -68,7 +60,7 @@
 
 	<h2>Other students in your house:</h2>
 	<div id="students">
-	<%= image_tag("#{MyDatum.all.sort_by {|myData| [-myData.id, myData.Building]} [0].Building.downcase}.jpg", :size => "260x180", :crop => :fill)%>
+	<%= image_tag("#{MyDatum.all.sort_by {|myData| [-myData.id, myData.Building]}[0].Building.downcase}.jpg", :size => "260x180", :crop => :fill)%>
 	
 	<% if @students.all.where(Building: MyDatum.all.sort_by {|myData| [-myData.id, myData.Building]} [0].Building).length == 0%>
 		<h3>There are no students in your house</h3>

@@ -27,6 +27,10 @@
 		</tbody>
 	</table>
 
+	<% if MyDatum.all[0].avatar.attached?%>
+		<%= image_tag MyDatum.all[0].avatar, :size => "260x180"%>
+	<%end%>
+
 <br>
 
 <div>
