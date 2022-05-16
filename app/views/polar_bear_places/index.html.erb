@@ -27,8 +27,9 @@
 	<table class="center" cellpadding="6" cellspacing="-5" style="border:1px solid black";margin-left:auto;margin-right:auto;>
 		<thead>
 			<tr>
-				<th>Student ID</th>
+				<th>Profile Picture</th>
 				<th>Name</th>
+				<th>Student ID</th>
 				<th>Email</th>
 				<th>Year</th>
 				<th>House</th>
@@ -37,19 +38,19 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td style="text-align: center; vertical-align: middle;"><%= MyDatum.all[0].StudentID%></td>
+				<% if MyDatum.all[0].avatar.attached?%>
+					<td style="text-align: center; vertical-align: middle;"><%= image_tag MyDatum.all[0].avatar, :size => "50x50"%></td>
+				<%end%>
 				<td style="text-align: center; vertical-align: middle;"><%= MyDatum.all[0].Name%></td>
+				<td style="text-align: center; vertical-align: middle;"><%= MyDatum.all[0].StudentID%></td>
 				<td style="text-align: center; vertical-align: middle;"><%=MyDatum.all[0].Email%></td>
 				<td style="text-align: center; vertical-align: middle;"><%=MyDatum.all[0].Year%></td>
 				<td style="text-align: center; vertical-align: middle;"><%=MyDatum.all[0].Building%></td>
 				<td style="text-align: center; vertical-align: middle;"><%=MyDatum.all[0].Room%></td>
+
 			</tr>
 		</tbody>
 	</table>
-
-	<% if MyDatum.all[0].avatar.attached?%>
-		<%= image_tag MyDatum.all[0].avatar, :size => "260x180"%>
-	<%end%>
 
 	<p>
 		<%= link_to "Edit your info", MyDatum.all[0] %>
