@@ -1,16 +1,17 @@
 <h1>Polar Bear Places</h1>
 
-<h4>Click on a college house to see who is living there:</h4>
-<%= link_to "Ladd", ladd_path %>
-<%= link_to "Quinby", quinby_path %>
-<%= link_to "Baxter", baxter_path %>
-<%= link_to "Reed", reed_path %>
-<%= link_to "Boody-Johnson", boodyjohnson_path %>
-<%= link_to "Macmillan", macmillan_path %>
-<%= link_to "Burnett", burnett_path %>
-<%= link_to "Helmreich", helmreich_path %>
-<%= link_to "Howell", howell_path %>
-
+<div class="nav">
+	<h4>Click on a college house to see who is living there:</h4>
+	<%= link_to "Ladd", ladd_path %>
+	<%= link_to "Quinby", quinby_path %>
+	<%= link_to "Baxter", baxter_path %>
+	<%= link_to "Reed", reed_path %>
+	<%= link_to "Boody-Johnson", boodyjohnson_path %>
+	<%= link_to "Macmillan", macmillan_path %>
+	<%= link_to "Burnett", burnett_path %>
+	<%= link_to "Helmreich", helmreich_path %>
+	<%= link_to "Howell", howell_path %>
+</div>
 
 <% if MyDatum.all.length() == 0%>
 	<h2>Enter your information to find out who you're living with!</h2>
