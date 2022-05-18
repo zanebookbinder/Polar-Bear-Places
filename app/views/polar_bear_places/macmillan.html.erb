@@ -2,10 +2,10 @@
 <body class="macmillan">
 
 <h1>Macmillan Residents</h1>
-<%= image_tag("macmillan.jpg", :size => "260x180", :crop => :fill)%>
 
+<div class="my-profile">
+	<%= image_tag("macmillan.jpg", :size => "260x180", :crop => :fill)%>
 
-<div id="students">
 	<table class="center" cellpadding="6" cellspacing="-5" style="border:1px solid black";margin-left:auto;margin-right:auto;>
 		<thead>
 			<tr>
@@ -35,6 +35,6 @@
 	</table>
 </div>
 
-<br >
-
-<%= link_to "Return home", root_path %>
+<div class="my-profile">
+	<%= link_to "Return home", root_path %>
+</div>

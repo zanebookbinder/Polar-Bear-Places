@@ -28,7 +28,7 @@
 			<%= image_tag("#{MyDatum.all.sort_by {|myData| [-myData.id, myData.Building]}[0].Building.downcase}.jpg", :size => "260x180", :crop => :fill)%>
 			
 			<% if @students.all.where(Building: MyDatum.all.sort_by {|myData| [-myData.id, myData.Building]} [0].Building).length == 0%>
-				<h3>There are no students in your house</h3>
+				<h2>There are no students in your house</h2>
 			<% else%>
 				<table class="center" cellpadding="6" cellspacing="-5" style="border:1px solid black";margin-left:auto;margin-right:auto;>
 					<thead>
