@@ -107,3 +107,9 @@ table {
     width: 80px;
 }
 
+.form {
+    font-size: 15px;
+    font-family: "Roboto";
+    font-weight: 200;
+    text-align: left;
+}

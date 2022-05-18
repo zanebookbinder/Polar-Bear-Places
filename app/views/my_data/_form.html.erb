@@ -11,42 +11,56 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :StudentID, style: "display: block" %>
+  <div class="form">
+    <%= form.label :StudentID %>
     <%= form.number_field :StudentID %>
   </div>
 
-  <div>
-    <%= form.label :Name, style: "display: block" %>
+  <br>
+
+  <div class="form">
+    <%= form.label :Name %>
     <%= form.text_field :Name %>
   </div>
 
-  <div>
-    <%= form.label :Email, style: "display: block" %>
+  <br>
+
+  <div class="form">
+    <%= form.label :Email %>
     <%= form.text_field :Email %>
   </div>
 
-  <div>
-    <%= form.label :Year, style: "display: block" %>
+  <br>
+
+  <div class="form">
+    <%= form.label :Year %>
     <%= form.number_field :Year %>
   </div>
 
-  <div>
-    <%= form.label :Building, style: "display: block" %>
+  <br>
+
+  <div class="form">
+    <%= form.label :Building %>
     <%= form.text_field :Building %>
   </div>
 
-  <div>
-    <%= form.label :Room, style: "display: block" %>
+  <br>
+
+  <div class="form">
+    <%= form.label :Room %>
     <%= form.text_field :Room %>
   </div>
 
-  <div>
-    <%= form.label :avatar, style: "display: block" %>
+  <br>
+
+  <div class="form">
+    <%= form.label :avatar %>
     <%= form.file_field :avatar %>
   </div>
+
+  <br>
     
-  <div>
+  <div class="form">
     <%= form.submit %>
   </div>
 <% end %>
